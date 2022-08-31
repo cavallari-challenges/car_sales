@@ -1,0 +1,7 @@
+<h3>Login</h3>
+
+<%= simple_form_for :auth, url: sessions_path do |f| %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.submit :submit %>
+<% end %>

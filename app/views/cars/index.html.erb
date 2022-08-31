@@ -1,0 +1,19 @@
+<h4 class="display-4">Cars</h4>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Car name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= car.name %></td>
+        <td><%= car.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

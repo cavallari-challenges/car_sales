@@ -1,0 +1,31 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+
+  <%= link_to 'Cars', root_path, class: 'navbar-brand' %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+
+      <% if can? :manage, Dealership %>
+        <%= render Bootstrap::DropdownComponent.new(title: 'Dealerships') do |c| %>
+          <%= c.with_button 'New Dealership', new_admin_dealership_path %>
+          <%= c.with_button 'List Dealerships', admin_dealerships_path %>
+        <% end %>
+      <% end %>
+
+      <% if can? :manage, Car %>
+        <%= render Bootstrap::DropdownComponent.new(title: 'Cars') do |c| %>
+          <%= c.with_button 'New Car', new_admin_car_path %>
+          <%= c.with_button 'List Cars', admin_cars_path %>
+        <% end %>
+      <% end %>
+
+      <% if current_user.present? %>
+        <li class="nav-item"><%= link_to 'Logout', sessions_path, method: :delete, class: 'nav-link', data: { 'turbo-method': :delete } %></li>7
+      <% end %>
+    </ul>
+  </div>
+</nav>

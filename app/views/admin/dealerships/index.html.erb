@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-between">
+  <h4 class="display-4 align-self-center"">Dealerships</h3>
+
+  <div class="align-self-center justify-content-end">
+    <%= link_to 'New dealer', new_admin_dealership_path, class: 'btn  btn-primary btn-xs', data: { turbo_frame: 'dealerships_frame' } %>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= Dealership.human_attribute_name(:name) %></th>
+      <th><%= Dealership.human_attribute_name(:created_at) %></th>
+      <th><%= t('.actions') %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dealerships.each do |dealership| %>
+      <tr>
+        <td><%= dealership.name %></td>
+        <td><%= l dealership.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_dealership_path(dealership) %>
+          <%= link_to 'Destroy', admin_dealership_path(dealership), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,27 @@
+<h4 class="display-4">Cars</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= Car.human_attribute_name(:name) %></th>
+      <th><%= Car.human_attribute_name(:condition) %></th>
+      <th><%= Car.human_attribute_name(:price) %></th>
+      <th><%= Car.human_attribute_name(:dealership) %></th>
+      <th><%= t('.actions') %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= car.name %></td>
+        <td><%= Car.human_attribute_name(car.condition) %></td>
+        <td><%= car.price %></td>
+        <td><%= car.dealership.name %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_car_path(car) %>
+          <%= link_to 'Destroy', admin_car_path(car), method: :delete, data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

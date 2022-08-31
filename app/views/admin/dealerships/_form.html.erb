@@ -1,0 +1,15 @@
+<%= simple_form_for [:admin, @dealership], url: url, data: { turbo: false } do |f| %>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New dealership</h5>
+      </div>
+      <div class="modal-body">
+        <%= f.input :name, placeholder: :name %>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit :send, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+<% end %>
