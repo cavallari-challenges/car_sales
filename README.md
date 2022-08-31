@@ -23,6 +23,10 @@ This is a sample car sales app wich a Dealership can have many cars and an admin
 
 - `bundle exec rspec`
 
-## Roadmap
+## Roadmap to next steps
 
 - Setup docker
+- Setup rubocop
+- Setup simplecov
+- Setup undercover
+- Setup CI
