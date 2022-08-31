@@ -1,24 +1,28 @@
-# README
+# Car sales app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sample car sales app wich a Dealership can have many cars and an administrator should feed the dealerships and cars database, and a general user can see the cars list.
 
-Things you may want to cover:
+## Running the project
 
-* Ruby version
+### Requirements
 
-* System dependencies
+- PostgreSQL (version 14+ is recommended)
+- Ruby (version 3.1.2)
 
-* Configuration
+### Intall
 
-* Database creation
+- Clone this repository
+- `bin/rails db:setup`
 
-* Database initialization
+### Executing
 
-* How to run the test suite
+- `bin/rails s`
+- Access through http://localhost:3000
 
-* Services (job queues, cache servers, search engines, etc.)
+## Running tests
 
-* Deployment instructions
+- `bundle exec rspec`
 
-* ...
+## Roadmap
+
+- Setup docker
