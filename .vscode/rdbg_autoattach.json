@@ -1,0 +1,9 @@
+{
+  "type": "rdbg",
+  "name": "Attach with rdbg",
+  "request": "attach",
+  "rdbgPath": "/home/cavallari/.rvm/gems/ruby-3.1.2/gems/debug-1.6.2/exe/rdbg",
+  "debugPort": "/mnt/wslg/runtime-dir/ruby-debug-cavallari-8558",
+  "localfs": true,
+  "autoAttach": "0.15531116067807949"
+}
